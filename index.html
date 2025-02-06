@@ -23,24 +23,26 @@
         }
 
         #contenedor {
-            width: 1793px;
-            height: 2051px;
+            width: 100vw;
+            height: 100vh;
+            max-width: 1793px;
+            max-height: 2051px;
             position: relative;
             background: url('fondo.png') no-repeat center center;
-            background-size: cover;
+            background-size: contain; /* Ajuste para que no se estire */
         }
 
         #countdown {
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 200px; /* Ajusta el tamaño del número */
+            font-size: 4vw; /* Tamaño dinámico para que se ajuste */
             color: #63323d;
             position: absolute;
-            top: 700px; /* Ajusta la posición vertical */
-            left: 880px; /* Ajusta la posición horizontal */
-            transform: translate(-50%, -50%); /* Centra el número en su posición */
-            z-index: 2; /* Asegura que esté encima del fondo */
-        } 
+            top: 34%; /* Ajuste basado en la proporción original */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -63,8 +65,8 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            actualizarCuentaRegresiva(); // Ejecutar al cargar
-            setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60); // Actualizar cada hora
+            actualizarCuentaRegresiva();
+            setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60);
         });
     </script>
 </body>
