@@ -23,23 +23,21 @@
         }
 
         #contenedor {
-            width: 100vw;
-            height: 100vh;
-            max-width: 1793px;
-            max-height: 2051px;
+            width: 1793px;  /* Se asegura que use el ancho total de las 3 pantallas */
+            height: 2051px; /* Mantiene la altura original */
             position: relative;
             background: url('fondo.png') no-repeat center center;
-            background-size: contain; /* Ajuste para que no se estire */
+            background-size: 100% 100%; /* Se ajusta para abarcar todas las pantallas */
         }
 
         #countdown {
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 4vw; /* Tamaño dinámico para que se ajuste */
+            font-size: 190px; /* Ajusta el tamaño del número */
             color: #63323d;
             position: absolute;
-            top: 34%; /* Ajuste basado en la proporción original */
-            left: 50%;
+            top: 705px;  /* Ajuste basado en la proporción original */
+            left: 896px; /* Centra el número en la pantalla */
             transform: translate(-50%, -50%);
             z-index: 2;
         }
@@ -71,3 +69,4 @@
     </script>
 </body>
 </html>
+
