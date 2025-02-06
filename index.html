@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,44 +12,41 @@
 
         body {
             margin: 0;
-            width: 100vw;  /* Ajustado para evitar problemas de escala */
-            height: 100vh;
-            overflow: hidden;
+            padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8d7da;
-            position: relative; /* Necesario para referencias absolutas */
-        }
-
-        #fondo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
             width: 100vw;
             height: 100vh;
+            background: #f8d7da;
+            overflow: hidden;
+        }
+
+        #contenedor {
+            width: 1793px;
+            height: 2051px;
+            position: relative;
             background: url('fondo.png') no-repeat center center;
-            background-size: contain; /* Prueba con 'cover' si se sigue viendo mal */
-			transform: translate(-50%, -50%);
+            background-size: cover;
         }
 
         #countdown {
             font-family: 'Eminor Bold', sans-serif;
             font-weight: bold;
-            font-size: 220px;
+            font-size: 200px; /* Ajusta el tamaño del número */
             color: #63323d;
             position: absolute;
-            top: 50%;
-            left: 50%;
-			margin-left: -10px; /* Mueve a la izquierda sin afectar la posición original */
-    margin-top: -380px;  /* Mueve hacia arriba sin afectar la posición original */
-            transform: translate(-50%, -50%);
-        }
+            top: 700px; /* Ajusta la posición vertical */
+            left: 880px; /* Ajusta la posición horizontal */
+            transform: translate(-50%, -50%); /* Centra el número en su posición */
+            z-index: 2; /* Asegura que esté encima del fondo */
+        } 
     </style>
 </head>
 <body>
-    <div id="fondo"></div>
-    <div id="countdown">Cargando...</div>
+    <div id="contenedor">
+        <div id="countdown">Cargando...</div>
+    </div>
 
     <script>
         function actualizarCuentaRegresiva() {
@@ -64,8 +62,10 @@
             }
         }
 
-        actualizarCuentaRegresiva(); // Ejecutar al cargar
-        setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60);
+        document.addEventListener("DOMContentLoaded", () => {
+            actualizarCuentaRegresiva(); // Ejecutar al cargar
+            setInterval(actualizarCuentaRegresiva, 1000 * 60 * 60); // Actualizar cada hora
+        });
     </script>
 </body>
-</
+</html>
